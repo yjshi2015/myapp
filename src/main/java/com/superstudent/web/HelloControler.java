@@ -11,6 +11,6 @@ public class HelloControler {
 
     @RequestMapping("/index")
     public void index() {
-
+        System.out.println("index...........");
     }
 }

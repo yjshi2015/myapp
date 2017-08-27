@@ -1,3 +1,4 @@
+import com.superstudent.common.sequence;
 import com.superstudent.domain.Student;
 import com.superstudent.service.StudentService;
 import org.junit.Test;
@@ -22,7 +23,7 @@ public class StudentServiceTest extends UnitilsJUnit4{
     @Test
     public void saveStudentTest() {
         Student stu = new Student();
-        stu.setStudentId(1);
+        stu.setStudentId(sequence.nextId());
         stu.setStudentName("张三");
         stu.setStudentAge(12);
         assertNotNull(applicationContext);

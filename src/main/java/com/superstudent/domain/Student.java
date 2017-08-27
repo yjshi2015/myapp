@@ -21,7 +21,7 @@ public class Student {
     /**
      * 学生id
      */
-    private int studentId;
+    private String studentId;
 
     /**
      * 学生姓名

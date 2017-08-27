@@ -9,9 +9,12 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <!-- Connection Info -->
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://w.rdc.sae.sina.com.cn:3306/oa?zeroDateTimeBehavior=convertToNull"/>
+        <!--<property name="url" value="jdbc:mysql://w.rdc.sae.sina.com.cn:3306/app_superstudent?zeroDateTimeBehavior=convertToNull"/>
         <property name="username" value="lkm235lj3y"/>
-        <property name="password" value="4jiw243hzxihhzijhwlymxk1yhmmh04xixyz325x"/>
+        <property name="password" value="4jiw243hzxihhzijhwlymxk1yhmmh04xixyz325x"/>-->
+        <property name="url" value="jdbc:mysql://localhost:3306/app_superstudent?zeroDateTimeBehavior=convertToNull"/>
+        <property name="username" value="root"/>
+        <property name="password" value="syj2015"/>
         <property name="maxActive" value="50"/>
         <property name="maxIdle" value="30"/>
         <property name="minIdle" value="20"/>
@@ -25,6 +28,8 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:sqlMapConfig.xml" />
+        <!-- 制定映射器路径 -->
+        <property name="mapperLocations" value="classpath:mybatismapper/*.xml" />
     </bean>
 
     <!--sqlSessionTemplate-->

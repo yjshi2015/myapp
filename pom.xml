@@ -138,7 +138,37 @@
 
   </dependencies>
 
+  <profiles>
+      <profile>
+          <id>development</id>
+          <activation>
+              <activeByDefault>true</activeByDefault>
+          </activation>
+          <properties>
+              <mysql.url>jdbc:mysql://localhost:3306/app_superstudent?zeroDateTimeBehavior=convertToNull</mysql.url>
+              <mysql.username>root</mysql.username>
+              <mysql.password>syj2015</mysql.password>
+          </properties>
+      </profile>
+
+      <profile>
+          <id>production</id>
+          <properties>
+              <mysql.url>jdbc:mysql://w.rdc.sae.sina.com.cn:3306/app_superstudent?zeroDateTimeBehavior=convertToNull</mysql.url>
+              <mysql.username>lkm235lj3y</mysql.username>
+              <mysql.password>4jiw243hzxihhzijhwlymxk1yhmmh04xixyz325x</mysql.password>
+          </properties>
+      </profile>
+  </profiles>
+
   <build>
+    <resources>
+        <!--指定哪个目录下的配置文件（不管是xml配置文件，还是properties属性文件），根据profile环境来替换属性值-->
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

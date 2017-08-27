@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybais.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.superstudent.dao.StudentMapper">
+
+    <insert id="saveStudent" parameterType="student">
+        insert into super_student (id,student_id,student_name,student_age,student_sex,
+            student_phone,student_address,creator,created,status,comment)
+        values (null,#{studentId},#{studentName},#{studentAge},#{studentSex},
+            #{studentPhone},#{studentAddress},#{creator},now(),'1',#{comment})
+    </insert>
+</mapper>

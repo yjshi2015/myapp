@@ -11,9 +11,6 @@
     <!--支持注解-->
     <context:annotation-config/>
     <!--自动扫描的包-->
-    <context:component-scan base-package="com" use-default-filters="false">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-    </context:component-scan>
+    <context:component-scan base-package="com"/>
 
 </beans>

@@ -16,9 +16,15 @@
 	   					   http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	   					   http://www.springframework.org/schema/context
 	   					   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-	<!-- 自动扫描所有的controller -->
+	<!--扫描控制器,当配置了它后,Spring会自动的到com.superstudent.web
+    下扫描带有@controller @service @component等注解等类,将他们自动实例化-->
 	<context:component-scan base-package="com.superstudent.web"/>
+
 	<context:annotation-config />
+
+	<!--自动注册DefaultAnnotationHandlerMapping与
+    AnnotationMethodHandlerAdapter 两个bean,它解决了一些@controllerz注解使用时的提前配置-->
+	<mvc:annotation-driven />
 
     <!--让Spring MVC的DispatcherServlet不拦截以下静态资源-->
     <mvc:resources mapping="/image/**" location="/assets/images/"/>

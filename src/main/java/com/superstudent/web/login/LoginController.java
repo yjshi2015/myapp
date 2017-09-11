@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 /**
  * Created by Administrator on 2017/9/10.
@@ -17,6 +19,8 @@ public class LoginController{
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private HttpServletRequest request;
 
     @RequestMapping("/login")
     public String userLogin(User user) {
@@ -30,6 +34,7 @@ public class LoginController{
             return "index";
         } else {
             System.out.println("用户名或密码不正确！");
+            request.setAttribute("error","用户名或密码不正确！");
             return "../../login";
         }
     }

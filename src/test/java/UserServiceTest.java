@@ -1,3 +1,4 @@
+import com.superstudent.domain.User;
 import com.superstudent.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -18,7 +19,10 @@ public class UserServiceTest extends UnitilsJUnit4{
 
     @Test
     public void testUserService() {
-        boolean result = userService.userExists("syj","123");
+        User user = new User();
+        user.setUserName("syj");
+        user.setPassword("123");
+        boolean result = userService.userExists(user);
         System.out.println("result---->" + result);
     }
 }

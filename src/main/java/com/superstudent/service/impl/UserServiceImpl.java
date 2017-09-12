@@ -19,9 +19,9 @@ public class UserServiceImpl implements UserService{
      * 验证用户是否存在
      */
     @Override
-    public boolean userExists(String userName, String password) {
-        User user = userDAO.getUser(userName,password);
-        if (user != null) {//存在该用户
+    public boolean userExists(User user) {
+        User currentUser = userDAO.getUser(user);
+        if (currentUser != null) {//存在该用户
             return true;
         }else {
             return false;

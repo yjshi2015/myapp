@@ -13,5 +13,5 @@ public interface UserDAO {
     /**
      * 获取用户信息
      */
-    User getUser(@Param("userName") String userName,@Param("password") String password);
+    User getUser(User user);
 }
